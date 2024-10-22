@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+.normalfont{
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
+.intrestingfont {
+  font-family: "Allura", cursive;
+  font-weight: 500;
+  font-style: normal;
+}

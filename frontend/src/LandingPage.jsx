@@ -29,7 +29,7 @@ function LandingPage() {
             bottom: "0",
             marginBottom: "5%",
             justifyContent: "center",
-            marginLeft: "20%",
+            // marginLeft: "20%",
             height: "5%",
           }}
         
