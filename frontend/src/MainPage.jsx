@@ -1,73 +1,141 @@
-import { useState } from "react";
-import Menu from "./Navbar";
-import FemaleLogo from "./images/FemaleLogo2.png";
-import MaleLogo from "./images/MaleLogo1.png";
-import { Link } from "react-router-dom";
-function MainPage() {
-  const [gender, updateGender] = useState("");
+import {Link} from 'react-router-dom'
+import logo from './images/logo.png'
+import MaleLogo from './images/MaleLogo1.png'
+import FemaleLogo from './images/FemaleLogo2.png'
+
+function Home() {
   return (
-    <div style={{ background: "#F5E9E7", height: "100vh" }}>
-      <Menu />
-      <div style={{ position: "relative", display: "inline-block" }}>
-        <div
+    <div
+      style={{
+        display: 'flex',
+        minHeight: '100vh',
+        background: '#F5E9E7'
+      }}
+    >
+      {/* LEFT SIDE */}
+      <div
+        style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          paddingLeft: '120px',
+          paddingRight: '40px',
+          paddingTop: '140px'
+        }}
+      >
+        <img
+          src={logo}
           style={{
-            fontSize: "36px",
-            position: "relative",
-            zIndex: "1",
-            color: "#9F9A9A",
+            width: '320px',
+            marginBottom: '28px',
+            filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.08))'
           }}
-          className="normalfont"
-        >
-          Your Dream Wardrobe,
-        </div>
-        <div
-          className="intrestingfont"
+        />
+
+        <h1
           style={{
-            fontSize: "50px",
-            color: "#EAB8CB",
-            position: "absolute",
-            top: "15px",
-            left: "0",
-            zIndex: "0",
+            color: '#8f7f7f',
+            fontSize: '56px',
+            letterSpacing: '-1px',
+            marginBottom: '8px',
+            lineHeight: '1.1'
+          }}
+        >
+          Your Dream Wardrobe
+        </h1>
+
+        <div
+          style={{
+            fontSize: '60px',
+            fontWeight: '500',
+            color: '#EAB8CB',
+            marginBottom: '20px'
           }}
         >
           One Swipe Away!
         </div>
+
+        <p style={{color: '#b0a1a1', fontSize: '18px', maxWidth: '400px'}}>
+          Get personalized outfit ideas based on what you already own —
+          instantly.
+        </p>
       </div>
+
+      {/* RIGHT SIDE */}
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-around",
-          width: "100%",
-          marginTop: "5%",
+          flex: 1,
+          display: 'flex',
+          alignItems: 'flex-start',
+          paddingTop: '200px',
+          justifyContent: 'center',
+          gap: '56px',
+          paddingRight: '80px'
         }}
       >
-        <Link to="/men" style={{ textDecoration: "none" }}>
-      <div
-        onClick={() => {
-          updateGender("male");
-          console.log(gender);
-        }}
-        style={{ background: "white", width: "30vw", height: "50vh" }}
-      >
-        <img height="90%" src={MaleLogo} alt="Male Logo" />
-        <div style={{ fontWeight: "600" }}>Male</div>
-      </div>
-    </Link>
-    <Link to="/women">
-        <div
-          onClick={() => {
-            updateGender("female");
-            console.log(gender );
-          }}
-          style={{ background: "white", width: "30vw", height: "50vh" }}
-        >
-          <img height="90%" src={FemaleLogo} />
-          <div style={{ fontWeight: "600" }}>Female</div>
-        </div>
+        <Link to="/men" style={{textDecoration: 'none'}}>
+          <div
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.05) translateY(-6px)'
+              e.currentTarget.style.boxShadow =
+                '0 20px 60px rgba(234,184,203,0.45)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)'
+              e.currentTarget.style.boxShadow =
+                '0 12px 30px rgba(234,184,203,0.35)'
+            }}
+            style={{
+              background: 'white',
+              border: '1px solid rgba(234,184,203,0.25)',
+              backdropFilter: 'blur(4px)',
+              borderRadius: '24px',
+              padding: '30px',
+              width: '300px',
+              boxShadow: '0 16px 40px rgba(234,184,203,0.35)',
+              textAlign: 'center',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+          >
+            <img src={MaleLogo} style={{width: '100%'}} />
+            <h3 style={{marginTop: '14px', color: '#555'}}>Male</h3>
+          </div>
+        </Link>
+
+        <Link to="/women" style={{textDecoration: 'none'}}>
+          <div
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.06)'
+              e.currentTarget.style.boxShadow =
+                '0 20px 60px rgba(234,184,203,0.45)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)'
+              e.currentTarget.style.boxShadow =
+                '0 12px 30px rgba(234,184,203,0.35)'
+            }}
+            style={{
+              background: 'white',
+              border: '1px solid rgba(234,184,203,0.25)',
+              backdropFilter: 'blur(4px)',
+              borderRadius: '24px',
+              padding: '30px',
+              width: '300px',
+              boxShadow: '0 16px 40px rgba(234,184,203,0.35)',
+              textAlign: 'center',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+          >
+            <img src={FemaleLogo} style={{width: '100%'}} />
+            <h3 style={{marginTop: '14px', color: '#555'}}>Female</h3>
+          </div>
         </Link>
       </div>
     </div>
-  );
+  )
 }
-export default MainPage;
+
+export default Home

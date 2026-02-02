@@ -1,5 +1,5 @@
-import React from 'react';
-import './Navbar.scss'; // You can define your styles here or inline styles
+import React from 'react'
+import './Navbar.scss'
 
 const Menu = () => {
   return (
@@ -33,10 +33,18 @@ const Menu = () => {
       </nav>
 
       {/* SVG Filters */}
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        style={{position: 'absolute', width: 0, height: 0}}
+      >
         <defs>
           <filter id="shadowed-goo">
-            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+            <feGaussianBlur
+              in="SourceGraphic"
+              result="blur"
+              stdDeviation="10"
+            />
             <feColorMatrix
               in="blur"
               mode="matrix"
@@ -56,7 +64,11 @@ const Menu = () => {
           </filter>
 
           <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+            <feGaussianBlur
+              in="SourceGraphic"
+              result="blur"
+              stdDeviation="10"
+            />
             <feColorMatrix
               in="blur"
               mode="matrix"
@@ -68,7 +80,7 @@ const Menu = () => {
         </defs>
       </svg>
     </div>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu
